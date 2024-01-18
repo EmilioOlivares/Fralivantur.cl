@@ -8240,11 +8240,14 @@ h1, h2, h3, h4, h5,
       height: 1150px; } }
   .slider-text h1 {
     font-size: 60px;
-    color: #fff;
+    color: white;
     line-height: 1.1;
     font-weight: 200; }
     .slider-text h1 span {
       display: block; }
+      @media (max-width: 790px){
+      .slider-text h1{
+        font-size: 40px;}}
   .slider-text .icon-wrap .icon {
     width: 70px;
     height: 70px;
@@ -8306,7 +8309,8 @@ h1, h2, h3, h4, h5,
       content: ''; }
 
 .request-form {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
   padding: 30px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -8316,8 +8320,12 @@ h1, h2, h3, h4, h5,
   -moz-box-shadow: 0px 10px 31px -21px rgba(0, 0, 0, 0.33);
   box-shadow: 0px 10px 31px -21px rgba(0, 0, 0, 0.33); }
   .request-form h2 {
-    color: #000000;
-    font-size: 22px;
+    color: white;
+    font-size: 18px;
+    font-weight: 600; }
+  .request-form li {
+    color: white;
+    font-size: 15px;
     font-weight: 600; }
   .request-form p {
     color: rgba(0, 0, 0, 0.5); }
