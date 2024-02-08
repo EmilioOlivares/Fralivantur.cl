@@ -366,7 +366,7 @@
         <div class="row justify-content-center mb-5">
           <div class="col-md-7 heading-section text-center ftco-animate">
             <span class="subheading">Contacto</span>
-            <h2>Si tiene alguna pregunta<br>no dudes en ponerte en contacto</h2>
+            <h2>Si tienes alguna pregunta<br>no dudes en ponerte en contacto</h2>
           </div>
         </div>
         <div class="row d-flex mb-5 contact-info justify-content-center">
@@ -404,20 +404,29 @@
           </div>
         </div>
         
-        <div class="row block-9 justify-content-center mb-5">
+        <div id="mensaje" class="row block-9 justify-content-center mb-5">
           <div class="col-md-8 mb-md-5">
-            <form action="https://formsubmit.co/emilio.olivares.2023d@gmail.com" method="post" class="bg-light p-5 contact-form">
+            <form action="https://api.web3forms.com/submit" method="post" class="bg-light p-5 contact-form">
+              <!-- REQUERIDO: Su clave de acceso aquí. No hay problem, esto puede ser público ya que no revela el correo -->
+              <input type="hidden" name="access_key" value="6cb81030-6d7a-447b-89a7-10185f780934">
+              <!-- Esta linea rellena previamente el asunto, y luego le suma la entrada normal enviada por el usuario -->
+              <input type="hidden" name="subject" value="Mensaje de la pagina web: ">
+              <!-- Recomendado: Para evitar el envío de SPAM. Asegúrese de que está oculto por defecto -->
+              <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+              <!-- Obligatorio: Si envía el formulario sin Javascript. -->
+              <input type="hidden" name="redirect" value="https://emilioolivares.github.io/Fralivantur.cl/#mensaje">
+
               <div class="form-group">
-                <input type="text" name="name" id="name" class="form-control" placeholder="Tu Nombre...">
+                <input type="text" name="name" title="Ingresar solo letras y espacios" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required id="name" class="form-control" placeholder="Tu Nombre...">
               </div>
               <div class="form-group">
-                <input type="email" name="email" id="email" class="form-control" placeholder="Tu Email...">
+                <input type="email" name="email" title="email incorrecto" pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required id="email" class="form-control" placeholder="Tu Email...">
               </div>
               <div class="form-group">
-                <input type="text" name="asusto" id="asunto" class="form-control" placeholder="Asunto...">
+                <input type="text" name="subject" title="Igrese un asunto" required id="subject" class="form-control" placeholder="Asunto...">
               </div>
               <div class="form-group">
-                <textarea name="mensaje" name="mensaje" id="mensaje" cols="30" rows="7" class="form-control" placeholder="Mensaje..."></textarea>
+                <textarea name="mensaje" name="mensaje" title="Ingresa un comentario inferior a 256 caracteres" data-pattern="^.{1,255}$" required id="mensaje" cols="30" rows="7" class="form-control" placeholder="Mensaje (incluya su teléfono aqui por favor)..."></textarea>
               </div>
               <div class="form-group">
                 <input type="submit" value="Enviar Mensaje" class="btn btn-primary py-3 px-5">
